@@ -16,11 +16,15 @@ Including another URLconf
 from django.contrib import admin
 # To tell our application which path to route we have to use (include) function and add the specific paths to it
 from django.urls import path,include
+# We are importing our register view page
+from users import views as user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('register/',user_views.register, name = 'register'),
     path('', include('blog.urls')), #It will be always a string
     #To make our user redirected to home page without doing any routing (i.e by just visiting site)we can do thi like:
     #path('', include('blod.urls')) 
 
 ]
+ 

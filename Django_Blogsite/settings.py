@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',  #Whenever we create any app or any template for we should add it in Installed apps path
+    'users.apps.UsersConfig', # Added new app users
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
