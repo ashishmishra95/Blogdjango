@@ -1,16 +1,17 @@
 <!-- Basically we are using csrf token which is an inbuilt class in Django for giving security  -->
 {% extends "blog/base.html" %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 	<div class="content-section">
 		<form method = "POST">
+			<!-- crsf token is a cross site request forgery which protects form data from several attacks on servier storing the data into  hash string o -->
 			{% csrf_token %}
 			<fieldset class="form-group">
 				<legend class="border-bottom mb-4">Join Today</legend>
-				{{ form }}
+				{{ form | crispy }}
 			</fieldset>
 			<div class="form-group">
-				<button class="btn btn-outline-info" type="submit">Sign up</button>
+				<button class="btn btn-outline-info" type="submit">Register</button>
 			</div>
 		</form>
 			<div class="border-top pt-3">
